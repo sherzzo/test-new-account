@@ -9,7 +9,13 @@ pipeline {
         }
 
         stage('Build') {
+            agent {
+                docker {
+                    image 'python:3.9'
+                }
+            }
             steps {
+                sh 'python -V'
                 echo "Account name: ${params.name}"
                 echo "Account email: ${params.email}"
                 echo "Role: ${params.role}"
