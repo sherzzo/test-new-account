@@ -5,7 +5,8 @@ pipeline {
         stage('Prepare') {
             steps {
                 echo 'Prepared env'
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sherzzo/test-new-account.git']]])
+                git 'https://github.com/sherzzo/test-new-account.git'
+                sh 'ls -lha'
             }
         }
 
