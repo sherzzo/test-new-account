@@ -5,7 +5,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 echo 'Prepared env'
-                git 'https://github.com/sherzzo/test-new-account.git'
+                git 'https://github.com/sherzzo/sharkdocs.git'
                 sh 'ls -lha'
             }
         }
